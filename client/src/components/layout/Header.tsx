@@ -31,11 +31,8 @@ export function Header() {
           className="flex items-center gap-2 cursor-pointer group"
           onClick={() => scrollTo("top")}
         >
-          <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300 box-glow">
-            <Film className="text-primary-foreground w-5 h-5" />
-          </div>
-          <span className="font-display font-bold text-xl tracking-wider">
-            EDIT<span className="text-primary">PRO</span>
+          <span className="font-display font-bold text-2xl tracking-[0.5rem] uppercase">
+            MSHIN
           </span>
         </div>
 
@@ -54,7 +51,7 @@ export function Header() {
           </button>
           <button 
             onClick={() => scrollTo("contacts")}
-            className="text-sm font-medium px-5 py-2 rounded-full border border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+            className="text-[10px] uppercase tracking-[0.2em] px-6 py-2 border border-white/20 text-white/70 hover:text-white hover:border-white transition-all duration-500"
           >
             Контакты
           </button>

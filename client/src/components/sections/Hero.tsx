@@ -7,69 +7,39 @@ export function Hero() {
   };
 
   return (
-    <section id="top" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background Gradients */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] pointer-events-none -z-10" />
-      
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full">
-        <div className="max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/80 border border-border text-sm font-medium mb-8 text-primary backdrop-blur-sm"
+    <section id="top" className="relative min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden bg-[#050505]">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full flex flex-col items-center text-center">
+        <motion.h1 
+          className="text-6xl md:text-8xl lg:text-[10rem] font-display font-bold leading-none mb-4 tracking-[0.8rem] text-white"
+          initial={{ opacity: 0, letterSpacing: "1.5rem" }}
+          animate={{ opacity: 1, letterSpacing: "0.8rem" }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+        >
+          MSHIN
+        </motion.h1>
+        
+        <motion.p 
+          className="text-[10px] md:text-xs uppercase tracking-[0.6rem] text-white/40 font-light"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.8 }}
+        >
+          VIDEO ENGINEERING & VISUAL NARRATIVE
+        </motion.p>
+        
+        <motion.div 
+          className="mt-20"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.2 }}
+        >
+          <button 
+            onClick={scrollToWorks}
+            className="group relative px-10 py-4 border border-white/10 text-white/50 text-[10px] uppercase tracking-[0.4rem] hover:text-white hover:border-white/40 transition-all duration-700"
           >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </span>
-            Открыт для новых проектов
-          </motion.div>
-          
-          <motion.h1 
-            className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-[1.1] mb-6 uppercase"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Делаю видео, <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-300 text-glow">
-              которые цепляют
-            </span>
-          </motion.h1>
-          
-          <motion.p 
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            Профессиональный видеомонтаж, саунд-дизайн и цветокоррекция. 
-            Превращаю исходники в захватывающие истории для брендов, YouTube и рекламы.
-          </motion.p>
-          
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <button 
-              onClick={scrollToWorks}
-              className="flex items-center justify-center gap-3 bg-primary text-primary-foreground font-bold px-8 py-4 rounded-full hover:scale-105 transition-transform duration-300 box-glow"
-            >
-              Смотреть работы
-              <ArrowRight className="w-5 h-5" />
-            </button>
-            <button 
-              onClick={() => document.getElementById("showreel")?.scrollIntoView({ behavior: "smooth" })}
-              className="flex items-center justify-center gap-3 bg-secondary text-foreground font-semibold px-8 py-4 rounded-full border border-border hover:border-primary/50 transition-colors duration-300 group"
-            >
-              <Play className="w-5 h-5 text-primary group-hover:fill-primary transition-all" />
-              Showreel 2024
-            </button>
-          </motion.div>
-        </div>
+            Explore
+          </button>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@300;400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,39 +7,39 @@
 @layer base {
   :root {
     --font-sans: 'Inter', sans-serif;
-    --font-display: 'Space Grotesk', sans-serif;
+    --font-display: 'Montserrat', sans-serif;
 
-    /* Dark Mode Default */
-    --background: 240 10% 4%; /* Very dark gray/black */
-    --foreground: 0 0% 98%;
+    /* High-end Minimalist: Deep Matte Black */
+    --background: 0 0% 2%; /* #050505 approx */
+    --foreground: 0 0% 100%;
     
-    --card: 240 10% 6%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 3%;
+    --card-foreground: 0 0% 90%;
     
-    --popover: 240 10% 6%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 3%;
+    --popover-foreground: 0 0% 90%;
     
-    /* Neon Green Accent */
-    --primary: 110 100% 54%; 
-    --primary-foreground: 240 10% 4%;
+    /* Neutral/White Accent for Cinematic feel */
+    --primary: 0 0% 100%; 
+    --primary-foreground: 0 0% 0%;
     
-    --secondary: 240 10% 12%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 0 0% 7%;
+    --secondary-foreground: 0 0% 100%;
     
-    --muted: 240 10% 12%;
-    --muted-foreground: 240 5% 65%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
     
-    --accent: 110 100% 54%;
-    --accent-foreground: 240 10% 4%;
+    --accent: 0 0% 100%;
+    --accent-foreground: 0 0% 0%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 10% 15%;
-    --input: 240 10% 15%;
-    --ring: 110 100% 54%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 100%;
 
-    --radius: 1rem;
+    --radius: 0rem; /* Sharp edges for high-end look */
   }
   
   html {
@@ -47,26 +47,38 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground overflow-x-hidden;
+    @apply bg-background text-foreground antialiased selection:bg-white selection:text-black overflow-x-hidden;
     font-family: var(--font-sans);
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out forwards;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    @apply tracking-tight;
+    @apply tracking-[0.2em] uppercase;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 }
 
 @layer utilities {
-  .text-glow {
-    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
-  }
-  
-  .box-glow {
-    box-shadow: 0 0 30px hsl(var(--primary) / 0.15);
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
   }
 
-  .box-glow-hover:hover {
-    box-shadow: 0 0 40px hsl(var(--primary) / 0.3);
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

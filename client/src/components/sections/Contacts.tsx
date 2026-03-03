@@ -3,69 +3,62 @@ import { Send, Mail, ArrowUpRight } from "lucide-react";
 
 export function Contacts() {
   return (
-    <section id="contacts" className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
-      {/* Decorative large text */}
-      <div className="absolute -top-10 -right-10 text-[15rem] font-display font-bold opacity-10 pointer-events-none whitespace-nowrap overflow-hidden">
-        LET'S WORK
-      </div>
-      
+    <section id="contacts" className="py-32 bg-[#050505] text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
+        <div className="flex flex-col items-center text-center">
           <motion.div 
-            className="max-w-2xl"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
           >
-            <h2 className="font-display font-bold text-5xl md:text-7xl mb-6 uppercase">
-              Готовы <br />создавать крутое?
+            <h2 className="font-display font-bold text-4xl md:text-6xl mb-8 tracking-[0.8rem] uppercase">
+              CONTACT
             </h2>
-            <p className="text-xl opacity-80 font-medium mb-10 max-w-lg">
-              Свяжитесь со мной, чтобы обсудить ваш проект, сроки и стоимость работы.
+            <p className="text-white/40 tracking-[0.3rem] uppercase text-[10px] mb-16 max-w-lg mx-auto font-light">
+              Available for visual narrative commissions worldwide.
             </p>
           </motion.div>
           
           <motion.div 
-            className="flex flex-col sm:flex-row gap-6 w-full lg:w-auto"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="flex flex-col sm:flex-row gap-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 1, delay: 0.3 }}
           >
             <a 
               href="https://t.me/placeholder" 
               target="_blank" 
               rel="noreferrer"
-              className="flex items-center justify-between gap-6 bg-black text-white px-8 py-6 rounded-2xl hover:scale-105 transition-transform duration-300 group w-full sm:w-auto min-w-[240px]"
+              className="group text-[10px] tracking-[0.5rem] uppercase text-white/60 hover:text-white transition-colors duration-500"
             >
-              <div className="flex flex-col">
-                <span className="text-sm text-gray-400 font-medium mb-1">Написать в</span>
-                <span className="font-bold text-2xl">Telegram</span>
-              </div>
-              <Send className="w-8 h-8 text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              Telegram
             </a>
             
             <a 
               href="mailto:hello@placeholder.com" 
-              className="flex items-center justify-between gap-6 bg-transparent border-2 border-black text-black px-8 py-6 rounded-2xl hover:bg-black hover:text-white transition-all duration-300 group w-full sm:w-auto min-w-[240px]"
+              className="group text-[10px] tracking-[0.5rem] uppercase text-white/60 hover:text-white transition-colors duration-500"
             >
-              <div className="flex flex-col">
-                <span className="text-sm font-medium mb-1 opacity-80">Отправить на</span>
-                <span className="font-bold text-2xl">Почту</span>
-              </div>
-              <Mail className="w-8 h-8 group-hover:text-primary transition-colors" />
+              Email
+            </a>
+
+            <a 
+              href="#" 
+              className="group text-[10px] tracking-[0.5rem] uppercase text-white/60 hover:text-white transition-colors duration-500"
+            >
+              Instagram
             </a>
           </motion.div>
         </div>
         
-        <div className="mt-32 pt-8 border-t border-black/20 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="font-medium opacity-80">© 2024 EditPro. Все права защищены.</p>
+        <div className="mt-40 pt-8 border-t border-white/5 flex flex-col items-center gap-6">
+          <p className="text-[10px] tracking-[0.3rem] text-white/20 uppercase">MSHIN © 2026. All rights reserved.</p>
           <button 
             onClick={() => document.getElementById("top")?.scrollIntoView({ behavior: "smooth" })}
-            className="flex items-center gap-2 font-bold hover:opacity-70 transition-opacity"
+            className="text-[9px] tracking-[0.4rem] uppercase text-white/10 hover:text-white/40 transition-colors"
           >
-            Наверх <ArrowUpRight className="w-5 h-5" />
+            Back to top
           </button>
         </div>
       </div>
